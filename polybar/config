@@ -46,7 +46,7 @@ module-margin = 1
 
 modules-left = i3 title 
 modules-center = time
-modules-right = cmus pavolume date 
+modules-right = cmus pavolume battery date 
 
 #################################################################################
 #				MODULES						#
@@ -127,3 +127,29 @@ format-background = ${colors.background}
 format-foreground = #f0c674
 format-padding = 1
 label-maxlen = 50
+
+[module/battery]
+type = internal/battery
+full-at = 98
+time-format = %H:%M
+
+format-charging = <animation-charging> <label-charging>
+label-charging = %percentage%% %time%
+
+format-discharging = <ramp-capacity> <label-discharging>
+label-discharging = %percentage%% %time%
+
+format-full = <label-full>
+format-full-prefix = " "
+format-full-prefix-foreground = ${colors.foreground}
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-foreground = ${colors.foreground} 
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-foreground = ${colors.foreground}
+animation-charging-framerate = 750
