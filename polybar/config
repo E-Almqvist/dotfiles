@@ -134,10 +134,10 @@ full-at = 98
 time-format = %H:%M
 
 format-charging = <animation-charging> <label-charging>
-label-charging = %percentage%% %time%
+label-charging = %percentage%% 
 
 format-discharging = <ramp-capacity> <label-discharging>
-label-discharging = %percentage%% %time%
+label-discharging = %percentage%% 
 
 format-full = <label-full>
 format-full-prefix = " "
