@@ -238,7 +238,7 @@ bindsym $mod+lalt+space exec rofi -show drun
 bindsym $mod+Print exec spectacle -r -c -b
 
 # Compositor
-exec_always compton
+exec_always picom
 
 # Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
