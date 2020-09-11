@@ -49,12 +49,22 @@ call plug#end()
 " Mapping
 " CTRL + D to open navtree 
 nmap <silent> <C-D> :NERDTreeToggle<CR> 
-
+" CTRL + F to enter goyo mode
+nmap <silent> <C-F> :Goyo<CR>
 
 " Theme
 set t_Co=256
-colorscheme base16-default-dark " happy_hacking
+colorscheme base16-default-dark 
 let &showbreak = '↳ '
 " hi Normal guibg=NONE ctermbg=NONE
 set termguicolors
 let base16colorspace=256
+
+" YCM
+set completeopt-=preview
+
+" Tabs
+nnoremap <silent> <C-Left> :tabprevious<CR> 
+nnoremap <silent> <C-Right> :tabnext<CR>
+nnoremap <silent> <C-j> :tabprevious<CR>
+nnoremap <silent> <C-k> :tabnext<CR>
