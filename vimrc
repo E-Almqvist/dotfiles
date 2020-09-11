@@ -49,8 +49,6 @@ call plug#end()
 " Mapping
 " CTRL + D to open navtree 
 nmap <silent> <C-D> :NERDTreeToggle<CR> 
-" CTRL + F to enter goyo mode
-nmap <silent> <C-F> :Goyo<CR>
 
 " Theme
 set t_Co=256
