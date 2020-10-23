@@ -1,5 +1,5 @@
 [colors]
-background = #ef242424
+background = #de242424
 # ef1d1f21
 foreground = #a4abb3
 # 707880
@@ -21,10 +21,10 @@ scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
 
 fixed-center = true
-override-redirect = true
+#override-redirect = true
 wm-restack = i3
 
-width = 80%
+width = 100%
 height = 28
 
 offset-x = 10%

@@ -49,12 +49,19 @@ call plug#end()
 " Mapping
 " CTRL + D to open navtree 
 nmap <silent> <C-D> :NERDTreeToggle<CR> 
+" Replace selection
+vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
 " Theme
 set t_Co=256
 colorscheme base16-default-dark 
+colors hybrid_material
 let &showbreak = '↳ '
-" hi Normal guibg=NONE ctermbg=NONE
+"hi Normal guibg=black ctermbg=black
+
+highlight clear LineNr
+highlight LineNr ctermfg=grey ctermbg=NONE
+
 set termguicolors
 let base16colorspace=256
 
