@@ -19,4 +19,4 @@ cp $HOME/.vimrc $repoPath/vimrc
 cp $HOME/.wallpaper.jpg $repoPath/wallpaper.jpg
 
 rm -r $repoPath/doom.d
-cp $HOME/.doom.d $repoPath/doom.d
+cp -r $HOME/.doom.d $repoPath/doom.d
