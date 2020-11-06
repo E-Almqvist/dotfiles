@@ -58,9 +58,6 @@
 (setq-default indent-tabs-mode 'only)
 (setq-default tab-width 8)
 
-; Elcord
-(elcord-mode)
-
 ; NASM
 (add-to-list 'auto-mode-alist '("\\.nasm\\'" . nasm-mode))
 
