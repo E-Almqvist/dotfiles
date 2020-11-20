@@ -55,9 +55,10 @@ vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 " Theme
 set t_Co=256
 colorscheme base16-default-dark 
-colors hybrid_material
+"colors hybrid_material
 let &showbreak = '↳ '
 "hi Normal guibg=black ctermbg=black
+"hi Normal guibg=NONE ctermbg=NONE
 
 highlight clear LineNr
 highlight LineNr ctermfg=grey ctermbg=NONE

@@ -57,6 +57,7 @@
 ; Indentation settings
 (setq-default indent-tabs-mode 'only)
 (setq-default tab-width 8)
+(defvaralias 'sgml-basic-offset 'tab-width)
 
 ; NASM
 (add-to-list 'auto-mode-alist '("\\.nasm\\'" . nasm-mode))
@@ -72,3 +73,10 @@
       doom-variable-pitch-font (font-spec :family "Overpass Mono")
       doom-unicode-font (font-spec :family "Overpass Mono" :size 16)
       doom-big-font (font-spec :family "Overpass Mono" :size 19))
+
+; Scroll stuff
+(setq scroll-conservatively 101)
+(setq inhibit-compacting-font-caches t)
+
+; Word wrap
+(global-visual-line-mode t)
