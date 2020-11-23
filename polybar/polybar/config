@@ -1,0 +1,227 @@
+[settings]
+compositing-foreground = difference
+
+[colors]
+background = #00000000
+#df151515
+# ef1d1f21
+foreground = #151515
+#a4abb3
+# 707880
+line = #d1111111
+border = #ef272727
+accent = #c2bf616a
+selected = #a84222
+#cc6666
+focused = #f0c674
+
+[global/wm]
+margin-top = 0
+margin-bottom = 21
+
+[bar/top]
+font-0 = "Overpass Mono:pixelsize=12#2.25"
+font-1 = "siji:pixelsize=10#1"
+
+line-size = 1
+
+monitor = ${env:MONITOR}
+
+#scroll-up = i3wm-wsnext
+#scroll-down = i3wm-wsprev
+
+fixed-center = true
+override-redirect = false
+
+width = 90%
+height = 21
+offset-x = 5%
+offset-y = 4
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+#radius = 0.0
+
+# line-size = 1
+# line-color = ${colors.line}
+
+# border-size = 1
+# border-color = ${colors.border}
+
+padding-left = 1
+padding-right = 1
+module-margin = 1
+
+#modules-left = dwm title
+modules-left = dwm
+modules-center =
+modules-right = cmus pavolume time date
+
+#################################################################################
+#				MODULES						#
+#################################################################################
+
+[module/dwm]
+type = internal/dwm
+format = <label-tags> <label-layout> <label-floating> <label-title>
+# Path to dwm socket (default: /tmp/dwm.sock)
+# socket-path = /tmp/dwm.sock
+
+# Left-click to view tag, right-click to toggle tag view
+enable-tags-click = true
+# Scroll to cycle between available tags
+enable-tags-scroll = true
+# If true and enable-tags-scroll = true, scrolling will view all tags regardless if occupied
+tags-scroll-empty = false
+# If true and enable-tags-scroll = true, scrolling will cycle through tags backwards
+tags-scroll-reverse = true
+# If true and enable-tags-scroll = true, wrap active tag when scrolling
+tags-scroll-wrap = true
+# Left-click to set secondary layout, right-click to switch to previous layout
+enable-layout-click = true
+# Scroll to cycle between available layouts
+enable-layout-scroll = false
+# Wrap when scrolling and reaching beginning/end of layouts
+layout-scroll-wrap = false
+# Reverse scroll direction
+layout-scroll-reverse = false
+
+# If enable-layout-click = true, clicking the layout symbol will switch to this layout
+secondary-layout-symbol = [M]
+
+# Separator in between shown tags
+# label-separator = -
+
+# Title of currently focused window
+# Available tokens:
+#   %title%
+label-title = %title%
+label-title-padding = 1
+label-title-foreground = ${colors.selected}
+label-title-maxlen = 50
+
+# Symbol of current layout
+# Available tokens:
+#   %symbol%
+label-layout = %symbol%
+label-layout-padding = 1
+label-layout-foreground = ${colors.foreground}
+label-layout-background = ${colors.background}
+
+# Text to show when currently focused window is floating
+label-floating = *
+
+# States: focused, unfocused, visible, urgent, empty
+# Available tokens:
+#   %name%
+
+# focused = Selected tag on focused monitor
+label-focused = %name%
+label-focused-background = ${colors.background}
+label-focused-foreground = ${colors.selected}
+label-focused-underline= ${colors.line}
+label-focused-padding = 1
+
+# unfocused = Unselected tag on unselected monitor
+label-unfocused = %name%
+label-unfocused-padding = 1
+
+# visible = Unselected tag, but occupied tag on any monitor
+label-visible = %name%
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+
+# urgent = Unselected tag with window that has urgency hint set
+label-urgent = [%name%]
+#label-urgent-background = ${colors.selected}
+label-urgent-foreground = ${colors.selected}
+label-urgent-padding = 1
+
+# empty = Unselected and unoccupied tag
+# This can be set to an empty string to hide empty tags
+label-empty = %name%
+label-empty-background = ${colors.background}
+label-empty-padding = 1
+
+[module/cmus]
+type = custom/script
+
+exec = ~/.config/polybar/scripts/cmus.sh
+exec-if = pgrep -x cmus
+interval = 1
+
+click-left = cmus-remote --next
+click-right = cmus-remote --prev
+click-middle = cmus-remote --pause
+scroll-up = cmus-remote --volume +5%
+scroll-down = cmus-remote --volume -5%
+
+label-font = 3
+format = <label>
+format-underline = ${colors.line}
+label =  %output%
+label-maxlen = 50
+
+[module/pavolume]
+type = custom/script
+tail = true
+label = %output%
+exec = ~/.config/polybar/scripts/pavolume.sh --listen
+click-right = exec pavucontrol
+click-left = ~/.config/polybar/scripts/pavolume.sh --togmute
+scroll-up = ~/.config/polybar/scripts/pavolume.sh --up
+scroll-down = ~/.config/polybar/scripts/pavolume.sh --down
+
+[module/updates]
+type = custom/script
+exec = ~/.config/polybar/scripts/updates.sh
+interval = 300
+label = %output%
+
+[module/date]
+type = internal/date
+label =  %date%  
+date = %Y-%m-%d
+time = %H:%M:%S
+interval = 1
+
+[module/time]
+type = internal/date
+label = %time%
+time = %H:%M:%S
+interval = 1
+
+[module/title]
+type = internal/xwindow
+format-background = ${colors.background}
+format-foreground = #f0c674
+format-padding = 1
+label-maxlen = 50
+
+[module/battery]
+type = internal/battery
+full-at = 98
+time-format = %H:%M
+
+format-charging = <animation-charging> <label-charging>
+label-charging = %percentage%% 
+
+format-discharging = <ramp-capacity> <label-discharging>
+label-discharging = %percentage%% 
+
+format-full = <label-full>
+format-full-prefix = " "
+format-full-prefix-foreground = ${colors.foreground}
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-foreground = ${colors.foreground} 
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-foreground = ${colors.foreground}
+animation-charging-framerate = 750
