@@ -23,8 +23,8 @@ set noet
 
 set autoindent
 set noexpandtab " If this doesn't work for a lang change the $LANG.vim and append this here
-set tabstop=4
-set shiftwidth=4
+set tabstop=8
+set shiftwidth=8
 " ~/.vim/plugged/vim-polyglot/ftplugin/(LANG).vim
 " If not there try:
 " :verbose set et? (remove that line)
@@ -43,6 +43,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'preservim/nerdtree' " Tree navigation
 	Plug 'rafi/awesome-vim-colorschemes' " Theme collection
 	Plug 'chriskempson/base16-vim' " Theme
+	Plug 'preservim/nerdcommenter'
 call plug#end()
 
 
@@ -58,7 +59,7 @@ colorscheme base16-default-dark
 "colors hybrid_material
 let &showbreak = '↳ '
 "hi Normal guibg=black ctermbg=black
-"hi Normal guibg=NONE ctermbg=NONE
+hi Normal guibg=NONE ctermbg=NONE
 
 highlight clear LineNr
 highlight LineNr ctermfg=grey ctermbg=NONE

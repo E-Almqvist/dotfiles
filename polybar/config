@@ -56,7 +56,7 @@ module-margin = 1
 #modules-left = dwm title
 modules-left = dwm
 modules-center =
-modules-right = cmus pavolume time date
+modules-right = cmus pavolume battery time date
 
 #################################################################################
 #				MODULES						#
@@ -206,10 +206,10 @@ full-at = 98
 time-format = %H:%M
 
 format-charging = <animation-charging> <label-charging>
-label-charging = %percentage%% 
+label-charging = %percentage%%
 
 format-discharging = <ramp-capacity> <label-discharging>
-label-discharging = %percentage%% 
+label-discharging = %percentage%%
 
 format-full = <label-full>
 format-full-prefix = " "
@@ -218,10 +218,11 @@ format-full-prefix-foreground = ${colors.foreground}
 ramp-capacity-0 = 
 ramp-capacity-1 = 
 ramp-capacity-2 = 
-ramp-capacity-foreground = ${colors.foreground} 
+ramp-capacity-foreground = ${colors.foreground}
 
 animation-charging-0 = 
 animation-charging-1 = 
 animation-charging-2 = 
 animation-charging-foreground = ${colors.foreground}
 animation-charging-framerate = 750
+
