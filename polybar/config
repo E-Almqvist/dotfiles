@@ -2,10 +2,10 @@
 #compositing-foreground = difference
 
 [colors]
-background = #21151515
+background = #2a212121
 #df151515
 # ef1d1f21
-foreground = #4ffefefe
+foreground = #8ffefefe
 #151515
 #a4abb3
 # 707880
